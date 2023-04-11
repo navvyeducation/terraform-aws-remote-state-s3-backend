@@ -67,6 +67,7 @@ resource "aws_s3_bucket" "state" {
 }
 
 resource "aws_s3_bucket_acl" "state" {
+  count  = var.enable_bucket_acl ? 1 : 0
   bucket = aws_s3_bucket.state.id
   acl    = "private"
 }

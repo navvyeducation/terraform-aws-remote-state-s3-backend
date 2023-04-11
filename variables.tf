@@ -150,6 +150,12 @@ variable "s3_logging_target_prefix" {
   default     = ""
 }
 
+variable "enable_bucket_acl" {
+  description = "Should the bucket \"private\" ACL be set."
+  type        = bool
+  default     = true
+}
+
 #---------------------------------------------------------------------------------------------------
 # DynamoDB Table for State Locking
 #---------------------------------------------------------------------------------------------------

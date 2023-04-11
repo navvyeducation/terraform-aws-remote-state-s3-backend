@@ -174,7 +174,7 @@ resource "aws_s3_bucket" "replica" {
 }
 
 resource "aws_s3_bucket_acl" "replica" {
-  count    = var.enable_replication ? 1 : 0
+  count    = var.enable_bucket_acl && var.enable_replication ? 1 : 0
   provider = aws.replica
 
 
